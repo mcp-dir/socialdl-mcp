@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/socialdl-mcp",
+  "title": "Social → Context",
+  "description": "Turn a TikTok/Instagram/YouTube link into text for your AI: metadata, transcript and image OCR.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/socialdl-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_socialdl"
+    }
+  ]
+}

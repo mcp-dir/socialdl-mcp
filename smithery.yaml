@@ -1,0 +1,39 @@
+# Smithery configuration for Social → Context
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_socialdl
+
+name: socialdl-mcp
+displayName: "Social → Context"
+description: >
+  Cole um link de rede social (TikTok, Instagram reel/post/carrossel, YouTube ou um .mp4) e receba o conteúdo como texto: metadados, transcrição do áudio/vídeo e descrição (OCR e resumo) das imagens. Dá ao Claude o contexto do que está dentro do vídeo ou post.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/socialdl-mcp
+repository: https://github.com/mcp-dir/socialdl-mcp
+
+tags:
+  - social-media
+  - tiktok
+  - instagram
+  - youtube
+  - transcription
+  - transcript
+  - video
+  - ocr
+  - context
+  - brazil
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_socialdl
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_socialdl/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
